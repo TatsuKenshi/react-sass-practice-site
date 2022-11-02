@@ -1,6 +1,7 @@
 import React from "react";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
+import { ShoppingBasket, SearchOutlined } from "@mui/icons-material";
+import "../styles/Header.scss";
 
 const Header = () => {
   return (
@@ -11,7 +12,9 @@ const Header = () => {
             <Link to="/women">Women</Link>
             <Link to="/men">Men</Link>
             <Link to="/denim">Denim</Link>
-            <Link to="/shop">Gift Shop</Link>
+            <Link to="/shop" className="orange">
+              Gift Shop
+            </Link>
             <Link to="/about">About</Link>
           </li>
         </ul>
@@ -22,8 +25,17 @@ const Header = () => {
 
         <div className="right">
           <div className="search">
-            <SearchOutlinedIcon className="search-icon" />
-            <button>Search</button>
+            <SearchOutlined className="search-icon" />
+            <button className="sch-btn">Search</button>
+          </div>
+          <div className="right-buttons">
+            <button>
+              <Link to="/login">Login</Link>
+            </button>
+            <button>
+              <Link to="/sign-up">Sign Up</Link>
+            </button>
+            <ShoppingBasket className="basket" />
           </div>
         </div>
       </nav>
